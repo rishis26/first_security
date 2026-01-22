@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#00ff41",
+        primary: "#00D9FF",
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "ui-sans-serif", "system-ui"],
