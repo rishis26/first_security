@@ -1,27 +1,6 @@
-@import "tailwindcss";
-
-:root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --primary: #00ff41;
-  --accent: #00ff41;
-  --muted: #4e4e4e;
-  --border: #1a1a1a;
-  --card: #050505;
-  --secondary: #0a0a0a;
-}
-
-@theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-card: var(--card);
-  
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -34,7 +13,6 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
   background: #000;
   color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +22,6 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-sans);
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -139,8 +116,8 @@ h1, h2, h3, h4 {
   transform: translateY(-50%);
   width: 6px;
   height: 2px;
-  background: var(--primary);
-  box-shadow: 0 0 8px var(--primary);
+  background: #00ff41;
+  box-shadow: 0 0 8px #00ff41;
 }
 
 /* Text Shadow Effects */
@@ -168,7 +145,7 @@ h1, h2, h3, h4 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: #00ff41;
   border-radius: 3px;
 }
 
@@ -178,11 +155,11 @@ h1, h2, h3, h4 {
 
 /* Selection */
 ::selection {
-  background: var(--primary);
+  background: #00ff41;
   color: #000;
 }
 
 ::-moz-selection {
-  background: var(--primary);
+  background: #00ff41;
   color: #000;
 }
