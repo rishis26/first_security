@@ -76,22 +76,21 @@ export default function Home() {
       </div>
 
       {/* Services Section */}
-      <section id="services" className="relative py-40 px-6 bg-black">
+      <section id="services" className="relative py-24 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="mb-32 relative">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-16">
-              <div className="relative flex-1">
-                <span className="text-primary font-mono text-[11px] mb-8 block tracking-[0.4em] uppercase">
-                  -- PROTOCOL_SELECTION --
+          <div className="mb-20">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+              <div className="flex-1">
+                <span className="text-primary font-mono text-xs mb-4 block tracking-wider uppercase opacity-60">
+                  Services
                 </span>
-                <h2 className="text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-shadow-glow">
-                  MISSION<br/>SCOPES
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                  Mission Scopes
                 </h2>
-                <div className="absolute -top-8 -left-8 w-20 h-20 border-t-2 border-l-2 border-primary/30 hidden md:block" />
               </div>
-              <div className="max-w-lg border-l-2 border-primary/30 pl-8 lg:pb-4">
-                <p className="text-zinc-400 font-mono text-sm leading-relaxed italic tracking-wide">
+              <div className="max-w-lg border-l border-zinc-800 pl-6 lg:pb-2">
+                <p className="text-zinc-500 text-sm leading-relaxed italic">
                   "We don't just find exploits. We rebuild your defenses from the kernel up."
                 </p>
               </div>
@@ -99,151 +98,126 @@ export default function Home() {
           </div>
 
           {/* Service Cards Grid */}
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6">
             {/* Quick Web Scan Card */}
-            <div className="group relative bg-zinc-950/50 border border-zinc-800 p-10 hover:border-primary/50 transition-all duration-500 backdrop-blur-sm flex flex-col">
-              <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-primary/20" />
+            <div className="group relative bg-black border border-zinc-800 p-8 hover:border-primary/30 transition-all duration-300 flex flex-col">
               
-              <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary/50 mb-8 font-mono">
+              <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-600 mb-6 font-mono">
                 QUICK_SCAN
               </div>
               
-              <h3 className="text-3xl font-black mb-6 group-hover:text-primary transition-colors duration-300 tracking-tight">
-                QUICK WEB SCAN
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 tracking-tight">
+                Quick Web Scan
               </h3>
               
-              <p className="text-zinc-500 mb-10 text-sm font-mono leading-relaxed uppercase tracking-wider">
+              <p className="text-zinc-500 mb-8 text-sm leading-relaxed">
                 Web app vulnerability scan + basic report. Perfect for pre-funding security check.
               </p>
               
-              <div className="text-5xl font-black mb-10 font-mono tracking-tighter mt-auto">
+              <div className="text-4xl font-bold mb-8 font-mono tracking-tight mt-auto">
                 $500
-                <span className="text-xs text-primary ml-3 font-bold uppercase tracking-widest opacity-70">
-                  FIXED
-                </span>
               </div>
               
-              <ul className="space-y-5 mb-10 text-[11px] uppercase tracking-wider font-bold text-zinc-400">
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>48 HOUR DELIVERY</span>
+              <ul className="space-y-3 mb-8 text-xs text-zinc-400">
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>48 hour delivery</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>VULNERABILITY REPORT</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>Vulnerability report</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>30-DAY MONEY-BACK</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>ASYNC DELIVERY</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>30-day money-back</span>
                 </li>
               </ul>
               
-              <button className="w-full border-2 border-zinc-700 py-4 text-[11px] font-black uppercase tracking-[0.3em] group-hover:border-primary group-hover:text-primary group-hover:shadow-[0_0_20px_rgba(0,255,65,0.2)] transition-all duration-300 mt-auto">
-                START_SCAN
+              <button className="w-full border border-zinc-800 py-3 text-xs font-bold uppercase tracking-wider group-hover:border-primary group-hover:text-primary transition-all duration-300 mt-auto">
+                Start Scan
               </button>
             </div>
 
             {/* Full Pentest Card - Featured */}
-            <div className="group relative bg-zinc-900 border-2 border-primary/60 p-10 transition-all duration-500 backdrop-blur-sm flex flex-col shadow-[0_0_40px_rgba(0,255,65,0.15)]">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_20px_#00ff41]" />
-              <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-primary/40" />
+            <div className="group relative bg-black border-2 border-primary/40 p-8 transition-all duration-300 flex flex-col">
+              <div className="absolute top-0 left-0 w-full h-px bg-primary" />
               
-              <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary mb-8 font-mono flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-6 font-mono">
                 RECOMMENDED
               </div>
               
-              <h3 className="text-3xl font-black mb-6 text-primary tracking-tight">
-                FULL PENTEST
+              <h3 className="text-2xl font-bold mb-4 text-primary tracking-tight">
+                Full Pentest
               </h3>
               
-              <p className="text-zinc-300 mb-10 text-sm font-mono leading-relaxed uppercase tracking-wider">
+              <p className="text-zinc-400 mb-8 text-sm leading-relaxed">
                 App + APIs + basic infrastructure + detailed remediation guide. Series A ready.
               </p>
               
-              <div className="text-5xl font-black mb-10 font-mono tracking-tighter mt-auto text-primary">
-                $900
-                <span className="text-xs text-primary ml-3 font-bold uppercase tracking-widest opacity-70">
-                  - $1.2K
-                </span>
+              <div className="text-4xl font-bold mb-8 font-mono tracking-tight mt-auto">
+                $900<span className="text-lg text-zinc-500">-1.2K</span>
               </div>
               
-              <ul className="space-y-5 mb-10 text-[11px] uppercase tracking-wider font-bold text-zinc-300">
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">#</span> 
-                  <span>2-3 WEEK DELIVERY</span>
+              <ul className="space-y-3 mb-8 text-xs text-zinc-300">
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>2-3 week delivery</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">#</span> 
-                  <span>FULL API COVERAGE</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>Full API coverage</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">#</span> 
-                  <span>DETAILED REMEDIATION</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>Detailed remediation</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">#</span> 
-                  <span>30-MIN EXPLAINER CALL</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">#</span> 
-                  <span>100% FINDINGS GUARANTEE</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>30-min explainer call</span>
                 </li>
               </ul>
               
-              <button className="w-full bg-primary text-black py-4 text-[11px] font-black uppercase tracking-[0.3em] hover:shadow-[0_0_40px_rgba(0,255,65,0.6)] transition-all duration-300 mt-auto">
-                GET_STARTED
+              <button className="w-full bg-primary text-black py-3 text-xs font-bold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 mt-auto">
+                Get Started
               </button>
             </div>
 
             {/* PTaaS Card */}
-            <div className="group relative bg-zinc-950/50 border border-zinc-800 p-10 hover:border-primary/50 transition-all duration-500 backdrop-blur-sm flex flex-col">
-              <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-primary/20" />
+            <div className="group relative bg-black border border-zinc-800 p-8 hover:border-primary/30 transition-all duration-300 flex flex-col">
               
-              <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary/50 mb-8 font-mono">
+              <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-600 mb-6 font-mono">
                 CONTINUOUS
               </div>
               
-              <h3 className="text-3xl font-black mb-6 group-hover:text-primary transition-colors duration-300 tracking-tight">
-                PTAAS
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 tracking-tight">
+                PTaaS
               </h3>
               
-              <p className="text-zinc-500 mb-10 text-sm font-mono leading-relaxed uppercase tracking-wider">
+              <p className="text-zinc-500 mb-8 text-sm leading-relaxed">
                 Weekly scans + monthly reports + dashboard. Ongoing peace of mind.
               </p>
               
-              <div className="text-5xl font-black mb-10 font-mono tracking-tighter mt-auto">
-                $600
-                <span className="text-xs text-primary ml-3 font-bold uppercase tracking-widest opacity-70">
-                  /MONTH
-                </span>
+              <div className="text-4xl font-bold mb-8 font-mono tracking-tight mt-auto">
+                $600<span className="text-sm text-zinc-500">/mo</span>
               </div>
               
-              <ul className="space-y-5 mb-10 text-[11px] uppercase tracking-wider font-bold text-zinc-400">
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>WEEKLY SCANS</span>
+              <ul className="space-y-3 mb-8 text-xs text-zinc-400">
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>Weekly scans</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>MONTHLY REPORTS</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>Monthly reports</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>LIVE DASHBOARD</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="text-primary text-base">&gt;</span> 
-                  <span>3-MONTH MINIMUM</span>
+                <li className="flex items-center gap-3">
+                  <span className="text-primary">→</span> 
+                  <span>Live dashboard</span>
                 </li>
               </ul>
               
-              <button className="w-full border-2 border-zinc-700 py-4 text-[11px] font-black uppercase tracking-[0.3em] group-hover:border-primary group-hover:text-primary group-hover:shadow-[0_0_20px_rgba(0,255,65,0.2)] transition-all duration-300 mt-auto">
-                SUBSCRIBE
+              <button className="w-full border border-zinc-800 py-3 text-xs font-bold uppercase tracking-wider group-hover:border-primary group-hover:text-primary transition-all duration-300 mt-auto">
+                Subscribe
               </button>
             </div>
           </div>
