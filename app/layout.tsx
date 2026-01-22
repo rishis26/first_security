@@ -15,11 +15,12 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "First Security | Rapid Security for Bootstrapped SaaS",
-  description: "Affordable, 48-hour vulnerability scans and pentests for startups. Security made simple.",
+  description:
+    "Affordable, 48-hour vulnerability scans and pentests for startups. Security made simple.",
   icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
   },
 };
 
@@ -30,9 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetBrainsMono.variable}`}>
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

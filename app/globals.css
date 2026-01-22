@@ -21,15 +21,22 @@ body {
   background-size: 40px 40px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 900;
   text-transform: uppercase;
 }
 
 /* Scanline Animation */
 @keyframes scanline {
-  0% { transform: translateY(-100vh); }
-  100% { transform: translateY(100vh); }
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
 .scanline {
@@ -42,22 +49,45 @@ h1, h2, h3, h4 {
   pointer-events: none;
   animation: scanline 10s linear infinite;
   z-index: 9999;
-  box-shadow: 0 0 30px #00ff41, 0 0 60px #00ff41;
+  box-shadow:
+    0 0 30px #00ff41,
+    0 0 60px #00ff41;
   opacity: 0.6;
 }
 
 /* Grain Texture */
 @keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  20% { transform: translate(-15%, 5%); }
-  30% { transform: translate(7%, -25%); }
-  40% { transform: translate(-5%, 25%); }
-  50% { transform: translate(-15%, 10%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 15%); }
-  80% { transform: translate(3%, 35%); }
-  90% { transform: translate(-10%, 10%); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
 }
 
 .grain {
@@ -68,7 +98,9 @@ h1, h2, h3, h4 {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  background: transparent url('data:image/svg+xml;utf8,<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>') repeat;
+  background: transparent
+    url('data:image/svg+xml;utf8,<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>')
+    repeat;
   background-size: 200px 200px;
   opacity: 0.03;
   pointer-events: none;
@@ -78,8 +110,12 @@ h1, h2, h3, h4 {
 
 /* Ticker Animation */
 @keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-ticker {
@@ -109,7 +145,7 @@ h1, h2, h3, h4 {
 }
 
 .terminal-line::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -122,14 +158,14 @@ h1, h2, h3, h4 {
 
 /* Text Shadow Effects */
 .text-shadow-glow {
-  text-shadow: 
+  text-shadow:
     0 0 20px rgba(255, 255, 255, 0.1),
     0 0 40px rgba(0, 255, 65, 0.1),
     0 0 60px rgba(0, 255, 65, 0.05);
 }
 
 .text-shadow-primary {
-  text-shadow: 
+  text-shadow:
     0 0 30px rgba(0, 255, 65, 0.5),
     0 0 60px rgba(0, 255, 65, 0.3),
     0 0 90px rgba(0, 255, 65, 0.2);
