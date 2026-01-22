@@ -5,6 +5,7 @@ import "./globals.css";
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: "variable",
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -23,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${jetBrainsMono.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

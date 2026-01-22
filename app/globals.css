@@ -1,18 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
+  --background: #000000;
   --foreground: #ffffff;
-  --primary: #00ff41; /* Neo-Matrix Green */
+  --primary: #00ff41;
   --accent: #00ff41;
-  --muted: #666666;
+  --muted: #4e4e4e;
   --border: #1a1a1a;
-  --card: #0a0a0a;
-  --secondary: #111111;
-  
-  /* Typography Scale */
-  --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-jetbrains-mono);
+  --card: #050505;
+  --secondary: #0a0a0a;
 }
 
 @theme {
@@ -22,8 +18,9 @@
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-card: var(--card);
-  --font-sans: var(--font-display);
-  --font-mono: var(--font-mono);
+  
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
 * {
@@ -32,52 +29,30 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-sans);
+  background: #000;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-  background-image: 
-    radial-gradient(circle at 2px 2px, #111 1px, transparent 0);
-  background-size: 24px 24px;
+  background-image: radial-gradient(circle at 2px 2px, #0a0a0a 1px, transparent 0);
+  background-size: 40px 40px;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-sans);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
-.mono {
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
-}
-
-/* Cyber Accents */
-.cyber-border {
-  border: 1px solid var(--border);
-  position: relative;
-}
-
-.cyber-border::after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid var(--primary);
-  border-right: 2px solid var(--primary);
-}
-
-/* Animations */
+/* Scanline Animation */
 @keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
 }
 
 .scanline {
@@ -85,27 +60,129 @@ h1, h2, h3, h4 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 255, 65, 0.05), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff41 50%, transparent);
   pointer-events: none;
-  animation: scanline 8s linear infinite;
-  z-index: 100;
+  animation: scanline 10s linear infinite;
+  z-index: 9999;
+  box-shadow: 0 0 30px #00ff41, 0 0 60px #00ff41;
+  opacity: 0.6;
 }
 
+/* Grain Texture */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+.grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('data:image/svg+xml;utf8,<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>') repeat;
+  background-size: 200px 200px;
+  opacity: 0.03;
+  pointer-events: none;
+  animation: grain 8s steps(10) infinite;
+  z-index: 1;
+}
+
+/* Ticker Animation */
 @keyframes ticker {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 .animate-ticker {
-  animation: ticker 30s linear infinite;
+  animation: ticker 40s linear infinite;
 }
 
+/* Fade In Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-in {
-  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Terminal Line Animation */
+.terminal-line {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.terminal-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Text Shadow Effects */
+.text-shadow-glow {
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(0, 255, 65, 0.1),
+    0 0 60px rgba(0, 255, 65, 0.05);
+}
+
+.text-shadow-primary {
+  text-shadow: 
+    0 0 30px rgba(0, 255, 65, 0.5),
+    0 0 60px rgba(0, 255, 65, 0.3),
+    0 0 90px rgba(0, 255, 65, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc33;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: #000;
+}
+
+::-moz-selection {
+  background: var(--primary);
+  color: #000;
 }
