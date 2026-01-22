@@ -14,8 +14,13 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FounderGuard | Rapid Security for Bootstrapped SaaS",
+  title: "First Security | Rapid Security for Bootstrapped SaaS",
   description: "Affordable, 48-hour vulnerability scans and pentests for startups. Security made simple.",
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default function RootLayout({
